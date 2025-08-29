@@ -73,6 +73,20 @@ kraken2-build --db $DBDIR --download-taxonomy --threads 120 --use-ftp
 # End of script
 ```
 
+
+Explanation:
+
+- conda activate kraken2 → loads Kraken2 environment
+
+- export KRAKEN_DB_NAME=$DBDIR → tells Kraken2 where to store the database
+
+- kraken2-build --download-taxonomy → fetches NCBI taxonomy files
+
+- --threads 120 → uses 120 CPU threads for faster download
+
+- --use-ftp → ensures NCBI files are retrieved via FTP
+
+
 <br />
 
 
