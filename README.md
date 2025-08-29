@@ -90,7 +90,10 @@ Explanation:
 <br />
 
 
-Step 3: Add the genomes to library
+## **Step 3: Add the genomes to library**
+
+
+Once you have genomes downloaded, you need to add them to your Kraken2 database.
 
 
 ```
@@ -117,6 +120,15 @@ export KRAKEN_DIR=/path/to/miniconda3/envs/kraken2/libexec
 find . -name "*.fna" -print0 | \
   xargs -0 -I {} kraken2-build --db $DBDIR --add-to-library "{}" --threads 120
 ```
+
+Explanation:
+
+- find . -name "*.fna" → looks for all .fna files in current directory
+
+- xargs ... kraken2-build --add-to-library → adds each genome file into the Kraken2 library
+
+- --threads 120 → speeds up processing when handling many genomes
+
 
 <br />
 
