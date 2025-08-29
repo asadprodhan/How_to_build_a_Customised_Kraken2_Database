@@ -199,11 +199,11 @@ Now that taxonomy and genome libraries are in place, the final step is to compil
 #
 # Activate Kraken2 environment
 conda activate kraken2
-
+#
 # Fix Kraken2 environment variables
-DBDIR=kraken2DB_ABFVP_072025
+DBDIR=kraken2DB
 export KRAKEN_DB_NAME=$DBDIR
-export KRAKEN_DIR=/software/projects/pawsey0792/prodhan21/miniconda3/envs/kraken2/libexec
+export KRAKEN_DIR=/path/to/miniconda3/envs/kraken2/libexec
 #
 # Build the database
 #
@@ -217,7 +217,7 @@ Explanation:
 
 - --threads 120 → uses multiple cores for faster DB building
 
-- DBDIR naming convention (e.g., kraken2DB_Date) helps version-control DBs
+- DBDIR naming convention (e.g., kraken2DB) helps version-control DBs
 
 
 
