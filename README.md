@@ -26,22 +26,29 @@
 <br />
 
 
-Step 1: Download the genomes
+## **Step 1: Download the genomes**
 
 
 👉 [How to Retrieve Public Data](https://github.com/asadprodhan/Practical_Bioinformatics_for_Biologists#chapter-05--how-to-retrieve-public-data)
 
 
+Keep these genome files (.fna or .fa) in a single directory.
+
 
 <br />
 
-Step 2: Download the taxonomy
+## **Step 2: Download the taxonomy**
+
+
+Kraken2 requires taxonomy files from NCBI to classify sequences.
+
+Below is a Slurm batch script for downloading taxonomy files on an HPC cluster:
 
 
 ```
 #!/bin/bash --login
-#SBATCH --job-name=K2DB       		# Name of the job
-#SBATCH --account=XXXX             	# Pawsey project account
+#SBATCH --job-name=K2DB       		      # Name of the job
+#SBATCH --account=XXXX             	    # Project account
 #SBATCH --partition=work                # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00               # Time limit (1 day)
 #SBATCH --ntasks=1                      # Single task/job
