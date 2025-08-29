@@ -133,40 +133,61 @@ Explanation:
 <br />
 
 
-Step 4: Generate the seqid2taxid.map file
+## **Step 4: Generate the seqid2taxid.map file**
 
 
-Step 4.1 
+Kraken2 needs a mapping file between genome sequence IDs and taxonomy IDs. This ensures correct classification.
+
+
+### **Step 4.1**
 
 ```
 wget ftp://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/nucl_gb.accession2taxid.gz
 ```
 
-Step 4.2
+Explanation:
+
+- NCBI provides accession2taxid files mapping every accession to its taxonomy ID
+
+  
+### **Step 4.2**
 
 ```
 gunzip nucl_gb.accession2taxid.gz
 ```
 
-Step 4.3
+### **Step 4.3**
 
 ```
 cut -f2,3 nucl_gb.accession2taxid > seqid2taxid.map
 ```
 
-Step 4.4
+Explanation:
+
+- Kraken2 needs a slimmed-down seqid2taxid.map
+
+- Only column 2 (accession.version) and column 3 (taxid) are kept
+
+  
+### **Step 4.4**
 
 
-Copy the seqid2taxid.map to $Kraken2DB (not in the taxonomy or library directory)
- 
+**Copy the seqid2taxid.map to $Kraken2DB (not in the taxonomy or library directory)**
 
-Step 5: Build the DB
+
+<br />
+
+
+## **Step 5: Build the DB**
+
+
+Now that taxonomy and genome libraries are in place, the final step is to compile the database.
 
 
 ```
 #!/bin/bash --login
-#SBATCH --job-name=K2DB_BAFVP-job        # Name of the job
-#SBATCH --account=pawsey0792             # Pawsey project account
+#SBATCH --job-name=K2DB                  # Name of the job
+#SBATCH --account=xxxx                   # Pawsey project account
 #SBATCH --partition=highmem              # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00                # Time limit (1 day)
 #SBATCH --ntasks=1                       # Single task/job
@@ -190,4 +211,14 @@ kraken2-build --db $DBDIR --build --threads 120
 # End of script
 ```
 
+Explanation:
 
+- kraken2-build --build → processes taxonomy + genomes into a searchable DB
+
+- --threads 120 → uses multiple cores for faster DB building
+
+- DBDIR naming convention (e.g., kraken2DB_Date) helps version-control DBs
+
+
+
+## **At this stage, your custom Kraken2 database is ready for classification!**
