@@ -11,7 +11,10 @@
 <div align="center"><b> Department of Primary Industries and Regional Development </b></div>
 
 
-<div align="center"><b> 3 Baron-Hay Court, South Perth, WA 6151, Australia. <sup>*</sup>Correspondence: prodhan82@gmail.com </b></div>
+<div align="center"><b> 3 Baron-Hay Court, South Perth, WA 6151, Australia </b></div>
+
+
+<div align="center"><b> *Correspondence: prodhan82@gmail.com </b></div>
 
 
 <br />
