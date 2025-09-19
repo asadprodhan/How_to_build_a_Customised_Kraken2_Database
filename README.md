@@ -52,7 +52,7 @@ Below is a Slurm batch script for downloading taxonomy files on an HPC cluster:
 #!/bin/bash --login
 #SBATCH --job-name=K2DB       		      # Name of the job
 #SBATCH --account=XXXX             	    # Project account
-#SBATCH --partition=work                # Partition (queue) to run the job
+#SBATCH --partition=xxx                 # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00               # Time limit (1 day)
 #SBATCH --ntasks=1                      # Single task/job
 #SBATCH --ntasks-per-node=1
@@ -103,7 +103,7 @@ Once you have genomes downloaded, you need to add them to your Kraken2 database.
 #!/bin/bash --login
 #SBATCH --job-name=K2DB
 #SBATCH --account=XXXX
-#SBATCH --partition=work
+#SBATCH --partition=xxx
 #SBATCH --time=1-00:00:00
 #SBATCH --ntasks=1
 #SBATCH --nodes=1
@@ -191,7 +191,7 @@ Now that taxonomy and genome libraries are in place, the final step is to compil
 #!/bin/bash --login
 #SBATCH --job-name=K2DB                  # Name of the job
 #SBATCH --account=xxxx                   # Pawsey project account
-#SBATCH --partition=highmem              # Partition (queue) to run the job
+#SBATCH --partition=xxx                  # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00                # Time limit (1 day)
 #SBATCH --ntasks=1                       # Single task/job
 #SBATCH --ntasks-per-node=1
