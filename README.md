@@ -29,6 +29,17 @@
 <br />
 
 
+## **Introduction**
+
+In metagenomics and microbial ecology, accurately classifying sequencing reads depends heavily on the quality and relevance of the reference database used. Kraken2 is a high-performance tool for taxonomic classification, but using its default or standard databases may not always be sufficient—especially if you want to focus on a particular taxonomic group, include novel genomes, or exclude irrelevant ones.
+
+This tutorial walks through the steps of building a customised Kraken2 database from scratch. 
+
+By following these steps, you’ll be able to generate a Kraken2 database that is tailored to your project’s needs—maximising accuracy, relevance, and computational efficiency.
+
+
+<br />
+
 ## **Step 1: Download the genomes**
 
 
