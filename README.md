@@ -46,7 +46,9 @@ By following these steps, you’ll be able to generate a Kraken2 database that i
 👉 [How to Retrieve Public Data](https://github.com/asadprodhan/Practical_Bioinformatics_for_Biologists#chapter-05--how-to-retrieve-public-data)
 
 
-Keep these genome files (.fna or .fa) in a single directory.
+- Keep these genome files (.fna or .fa) in a single directory
+
+- Within that directory, run the script presented in Step 2.  
 
 
 <br />
