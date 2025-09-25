@@ -53,7 +53,11 @@ By following these steps, you’ll be able to generate a Kraken2 database that i
 - Within that directory, run the script presented in Step 2.  
 
 
+---
+
+
 <br />
+
 
 ## **Step 2: Download the taxonomy**
 
