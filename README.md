@@ -40,6 +40,8 @@ By following these steps, you’ll be able to generate a Kraken2 database that i
 
 <br />
 
+---
+
 ## **Step 1: Download the genomes**
 
 
@@ -56,9 +58,9 @@ By following these steps, you’ll be able to generate a Kraken2 database that i
 ## **Step 2: Download the taxonomy**
 
 
-Kraken2 requires taxonomy files from NCBI to classify sequences.
+- Kraken2 requires taxonomy files from NCBI to classify sequences.
 
-Below is a Slurm batch script for downloading taxonomy files on an HPC cluster:
+- Below is a Slurm batch script for downloading taxonomy files on an HPC cluster:
 
 
 ```
