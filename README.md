@@ -158,6 +158,7 @@ find . -name "*.fna" -print0 | \
 
 - --threads 120 → speeds up processing when handling many genomes
 
+---
 
 <br />
 
@@ -203,6 +204,7 @@ Explanation:
 
 **Copy the seqid2taxid.map to $Kraken2DB (not in the taxonomy or library directory)**
 
+---
 
 <br />
 
