@@ -69,7 +69,7 @@ By following these steps, you’ll be able to generate a Kraken2 database that i
 
 ```
 #!/bin/bash --login
-#SBATCH --job-name=K2DB                 # Name of the job
+#SBATCH --job-name=Taxonomy             # Name of the job
 #SBATCH --account=XXXX             	    # Project account
 #SBATCH --partition=xxx                 # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00               # Time limit (1 day)
@@ -109,6 +109,9 @@ kraken2-build --db $DBDIR --download-taxonomy --threads 120 --use-ftp
 - --threads 120 → uses 120 CPU threads for faster download. Change it based on your computing resources
 
 - --use-ftp → ensures NCBI files are retrieved via FTP
+
+
+---
 
 
 <br />
