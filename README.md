@@ -63,7 +63,7 @@ Below is a Slurm batch script for downloading taxonomy files on an HPC cluster:
 
 ```
 #!/bin/bash --login
-#SBATCH --job-name=K2DB       		      # Name of the job
+#SBATCH --job-name=K2DB                 # Name of the job
 #SBATCH --account=XXXX             	    # Project account
 #SBATCH --partition=xxx                 # Partition (queue) to run the job
 #SBATCH --time=1-00:00:00               # Time limit (1 day)
@@ -90,15 +90,17 @@ kraken2-build --db $DBDIR --download-taxonomy --threads 120 --use-ftp
 ```
 
 
-Explanation:
+### **How does the script work**
 
 - conda activate kraken2 → loads Kraken2 environment
 
-- export KRAKEN_DB_NAME=$DBDIR → tells Kraken2 where to store the database
+- DBDIR=kraken2DB → assigns the name for the database directory. Change it if you like 
+
+- export KRAKEN_DB_NAME=$DBDIR → creates the database directory and tells Kraken2 to store the taxonomy files in there
 
 - kraken2-build --download-taxonomy → fetches NCBI taxonomy files
 
-- --threads 120 → uses 120 CPU threads for faster download
+- --threads 120 → uses 120 CPU threads for faster download. Change it based on your computing resources
 
 - --use-ftp → ensures NCBI files are retrieved via FTP
 
@@ -109,7 +111,7 @@ Explanation:
 ## **Step 3: Add the genomes to library**
 
 
-Once you have genomes downloaded, you need to add them to your Kraken2 database.
+- At Step 3, you will supply the downloaded genomes to Kraken2 for converting them into Kraken2 database at Step 4.
 
 
 ```
@@ -137,7 +139,9 @@ find . -name "*.fna" -print0 | \
   xargs -0 -I {} kraken2-build --db $DBDIR --add-to-library "{}" --threads 120
 ```
 
-Explanation:
+
+### **How does the script work**
+
 
 - find . -name "*.fna" → looks for all .fna files in current directory
 
